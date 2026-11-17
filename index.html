@@ -63,8 +63,8 @@ const CONFIG = {
     clients:  40   // PLACEHOLDER — your real number of clients
   },
 
-  // PLACEHOLDER — path to your transparent cut-out portrait, e.g. 'img/karrar.png'
-  portrait: { src: '' },
+  // Transparent cut-out portrait
+  portrait: { src: 'img/karrar.webp' },
 
   // 3D STICKERS — leave '' to use the built-in SVG; put a PNG path to replace it.
   // e.g. lens: 'img/stickers/lens.png'
@@ -73,11 +73,16 @@ const CONFIG = {
     ai: '', pen: '', play: '', printer: ''
   },
 
-  // Second marquee row. src '' = generated placeholder.  PLACEHOLDER
+  // Second marquee row (src '' = generated placeholder)
   marqueeTiles: [
-    { src: '', key: 'schools' }, { src: '', key: 'sports' }, { src: '', key: 'travel' },
-    { src: '', key: 'logos' },   { src: '', key: 'prints' }, { src: '', key: 'campaigns' },
-    { src: '', key: 'motion' },  { src: '', key: 'sports' }
+    { src: 'img/works/derby-baghdad.webp', key: 'sports' },
+    { src: 'img/works/cage.webp', key: 'sports' },
+    { src: 'img/works/meme-bell.webp', key: 'sports' },
+    { src: 'img/works/heart.webp', key: 'sports' },
+    { src: 'img/works/karbala.webp', key: 'sports' },
+    { src: 'img/works/moataz.webp', key: 'sports' },
+    { src: 'img/works/gaz-oud.webp', key: 'sports' },
+    { src: 'img/works/were-here.webp', key: 'sports' }
   ],
 
   /* PROJECTS ------------------------------------------------------------
@@ -87,25 +92,59 @@ const CONFIG = {
      full : optional large image for the lightbox (falls back to src)
      title/client : string or { ar, en }
      size : optional bento size 'xl' | 'wide' | 'tall' | '' (auto if omitted)
-     featured : true → shown in the 3 big Featured cards (one school, one sports, one travel)
-     All entries below are PLACEHOLDERS. */
+     featured : true → shown in the 3 big Featured cards
+     Sports entries are real work; the other categories are still PLACEHOLDERS. */
   projects: [
+    // — Social Media › Sports — real work for MNBR Shorta (Al-Shorta SC fan page)
+    {"cat": "social", "sub": "sports", "src": "img/works/jalal.webp", "full": "img/works/full/jalal.webp", "title": {"ar": "ترحيب — جلال حسن", "en": "Welcome — Jalal Hassan"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "featured": true},
+    {"cat": "social", "sub": "sports", "src": "img/works/derby-baghdad.webp", "full": "img/works/full/derby-baghdad.webp", "title": {"ar": "ديربي بغداد: الشرطة × الزوراء", "en": "Baghdad Derby: Shorta vs Zawraa"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2026, "featured": true},
+    {"cat": "social", "sub": "sports", "src": "img/works/karbala.webp", "full": "img/works/full/karbala.webp", "title": {"ar": "المباراة القادمة: الشرطة × كربلاء", "en": "Next Match: Shorta vs Karbala"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "featured": true},
+    {"cat": "social", "sub": "sports", "src": "img/works/ali-muhsin.webp", "full": "img/works/full/ali-muhsin.webp", "title": {"ar": "ترحيب — علي محسن", "en": "Welcome — Ali Muhsin"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/gharafa.webp", "full": "img/works/full/gharafa.webp", "title": {"ar": "الشرطة × الغرافة", "en": "Shorta vs Al-Gharafa"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2025},
+    {"cat": "social", "sub": "sports", "src": "img/works/cage.webp", "full": "img/works/full/cage.webp", "title": {"ar": "القفص بانتظاركم: الشرطة × نفط ميسان", "en": "The Cage Awaits: Shorta vs Naft Maysan"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/east-bengal.webp", "full": "img/works/full/east-bengal.webp", "title": {"ar": "المباراة القادمة: ايست بنغال × الشرطة", "en": "Next Match: East Bengal vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2026},
+    {"cat": "social", "sub": "sports", "src": "img/works/meme-bell.webp", "full": "img/works/full/meme-bell.webp", "title": {"ar": "أهلاً بالعودة — مهند علي ميمي", "en": "Welcome Home — Mohanad Ali Meme"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/heart.webp", "full": "img/works/full/heart.webp", "title": {"ar": "حيث ينتمي القلب", "en": "Where the Heart Belongs"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/hacked.webp", "full": "img/works/full/hacked.webp", "title": {"ar": "تم اختراق الدوري العراقي مجدداً", "en": "Iraqi League Hacked Again"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/golan.webp", "full": "img/works/full/golan.webp", "title": {"ar": "المباراة القادمة: الشرطة × الجولان", "en": "Next Match: Shorta vs Golan"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2026},
+    {"cat": "social", "sub": "sports", "src": "img/works/barco.webp", "full": "img/works/full/barco.webp", "title": {"ar": "ترحيب — باركو", "en": "Welcome — Barco"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/faisal.webp", "full": "img/works/full/faisal.webp", "title": {"ar": "شكراً فيصل", "en": "Thank You Faisal"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/talaba-derby.webp", "full": "img/works/full/talaba-derby.webp", "title": {"ar": "الديربي: الشرطة × الطلبة", "en": "The Derby: Shorta vs Al-Talaba"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/irbid-locker.webp", "full": "img/works/full/irbid-locker.webp", "title": {"ar": "يوم المباراة: الشرطة × الحسين اربد", "en": "Match Day: Shorta vs Al-Hussein Irbid"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/gaz-oud.webp", "full": "img/works/full/gaz-oud.webp", "title": {"ar": "المباراة القادمة: الشرطة × غاز الشمال", "en": "Next Match: Shorta vs Gaz Al-Shimal"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/kahraba.webp", "full": "img/works/full/kahraba.webp", "title": {"ar": "الشرطة × الكهرباء", "en": "Shorta vs Al-Kahraba"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2025},
+    {"cat": "social", "sub": "sports", "src": "img/works/moataz.webp", "full": "img/works/full/moataz.webp", "title": {"ar": "معتز زدام", "en": "Moataz Zaddam"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/ayad.webp", "full": "img/works/full/ayad.webp", "title": {"ar": "ترحيب — اياد عبد", "en": "Welcome — Ayad Abd"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/karma-door.webp", "full": "img/works/full/karma-door.webp", "title": {"ar": "يوم المباراة: الشرطة × الكرمة", "en": "Match Day: Shorta vs Karma"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/cup-talaba.webp", "full": "img/works/full/cup-talaba.webp", "title": {"ar": "الكأس: الشرطة × الطلبة", "en": "Cup: Shorta vs Al-Talaba"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/were-here.webp", "full": "img/works/full/were-here.webp", "title": {"ar": "الشرطة كانوا هنا", "en": "Al-Shorta Were Here"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/murtadha.webp", "full": "img/works/full/murtadha.webp", "title": {"ar": "ترحيب — مرتضى حسن", "en": "Welcome — Murtadha Hassan"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/qasim.webp", "full": "img/works/full/qasim.webp", "title": {"ar": "القاسم × الشرطة", "en": "Al-Qasim vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2025},
+    {"cat": "social", "sub": "sports", "src": "img/works/petra.webp", "full": "img/works/full/petra.webp", "title": {"ar": "المباراة القادمة: الشرطة × الحسين اربد", "en": "Next Match: Shorta vs Al-Hussein Irbid"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2026},
+    {"cat": "social", "sub": "sports", "src": "img/works/karma-minaret.webp", "full": "img/works/full/karma-minaret.webp", "title": {"ar": "المباراة القادمة: الشرطة × الكرمة", "en": "Next Match: Shorta vs Karma"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2026},
+    {"cat": "social", "sub": "sports", "src": "img/works/erbil-chess.webp", "full": "img/works/full/erbil-chess.webp", "title": {"ar": "يوم المباراة: الشرطة × أربيل", "en": "Match Day: Shorta vs Erbil"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/mosul.webp", "full": "img/works/full/mosul.webp", "title": {"ar": "المباراة القادمة: الموصل × الشرطة", "en": "Next Match: Mosul vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/hattrick.webp", "full": "img/works/full/hattrick.webp", "title": {"ar": "سوبر هاتريك", "en": "Super Hat-trick"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/nowruz.webp", "full": "img/works/full/nowruz.webp", "title": {"ar": "الشرطة × نوروز", "en": "Shorta vs Nowruz"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2025},
+    {"cat": "social", "sub": "sports", "src": "img/works/mina-boat.webp", "full": "img/works/full/mina-boat.webp", "title": {"ar": "المباراة القادمة: الميناء × الشرطة", "en": "Next Match: Al-Mina vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/najaf.webp", "full": "img/works/full/najaf.webp", "title": {"ar": "يوم المباراة: النجف × الشرطة", "en": "Match Day: Najaf vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/meme-karma.webp", "full": "img/works/full/meme-karma.webp", "title": {"ar": "المباراة القادمة: الشرطة × الكرمة", "en": "Next Match: Shorta vs Karma"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/aggoun.webp", "full": "img/works/full/aggoun.webp", "title": {"ar": "ترحيب — طارق عقون", "en": "Welcome — Tarik Aggoun"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/karkh-skate.webp", "full": "img/works/full/karkh-skate.webp", "title": {"ar": "الشرطة × الكرخ", "en": "Shorta vs Al-Karkh"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}, "year": 2025},
+    {"cat": "social", "sub": "sports", "src": "img/works/tractor.webp", "full": "img/works/full/tractor.webp", "title": {"ar": "الوصول: المباراة القادمة أمام تراكتور", "en": "Arrival: Next Match vs Tractor"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/ahli.webp", "full": "img/works/full/ahli.webp", "title": {"ar": "المباراة القادمة: الشرطة × الأهلي", "en": "Next Match: Shorta vs Al-Ahli"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/gharraf.webp", "full": "img/works/full/gharraf.webp", "title": {"ar": "المباراة القادمة: الغراف × الشرطة", "en": "Next Match: Al-Gharraf vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/diyala.webp", "full": "img/works/full/diyala.webp", "title": {"ar": "الديربي: الجوية × الشرطة", "en": "The Derby: Al-Quwa Al-Jawiya vs Shorta"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
+    {"cat": "social", "sub": "sports", "src": "img/works/squad.webp", "full": "img/works/full/squad.webp", "title": {"ar": "قائمة فريق الشرطة", "en": "Al-Shorta Squad"}, "client": {"ar": "منبر الشرطة", "en": "MNBR Shorta"}},
     // — Social Media › Schools —
-    { cat:'social', sub:'schools', src:'', title:{ en:'Back to School Campaign', ar:'حملة العودة للمدارس' }, client:{ en:'School Client A', ar:'مدرسة — عميل أ' }, year:2025, featured:true },
+    { cat:'social', sub:'schools', src:'', title:{ en:'Back to School Campaign', ar:'حملة العودة للمدارس' }, client:{ en:'School Client A', ar:'مدرسة — عميل أ' }, year:2025 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Exam Season Posts', ar:'منشورات موسم الامتحانات' }, client:{ en:'School Client B', ar:'مدرسة — عميل ب' }, year:2025 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Graduation Day', ar:'حفل التخرج' }, client:{ en:'School Client A', ar:'مدرسة — عميل أ' }, year:2024 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Registration Open', ar:'التسجيل مفتوح' }, client:{ en:'School Client C', ar:'مدرسة — عميل ج' }, year:2024 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Teachers Day', ar:'يوم المعلم' }, client:{ en:'School Client B', ar:'مدرسة — عميل ب' }, year:2024 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Top Students', ar:'الطلبة المتفوقون' }, client:{ en:'School Client C', ar:'مدرسة — عميل ج' }, year:2023 },
-    // — Social Media › Sports —
-    { cat:'social', sub:'sports', src:'', title:{ en:'Match Day Poster', ar:'بوستر يوم المباراة' }, client:{ en:'Sports Club A', ar:'نادٍ رياضي — أ' }, year:2025, featured:true },
-    { cat:'social', sub:'sports', src:'', title:{ en:'Final Score', ar:'النتيجة النهائية' }, client:{ en:'Sports Club A', ar:'نادٍ رياضي — أ' }, year:2025 },
-    { cat:'social', sub:'sports', src:'', title:{ en:'New Signing', ar:'صفقة جديدة' }, client:{ en:'Sports Club B', ar:'نادٍ رياضي — ب' }, year:2024 },
-    { cat:'social', sub:'sports', src:'', title:{ en:'Starting Line-up', ar:'التشكيلة الأساسية' }, client:{ en:'Sports Club B', ar:'نادٍ رياضي — ب' }, year:2024 },
-    { cat:'social', sub:'sports', src:'', title:{ en:'Player of the Month', ar:'لاعب الشهر' }, client:{ en:'Sports Academy', ar:'أكاديمية رياضية' }, year:2024 },
-    { cat:'social', sub:'sports', src:'', title:{ en:'Season Kick-off', ar:'انطلاق الموسم' }, client:{ en:'Sports Academy', ar:'أكاديمية رياضية' }, year:2023 },
     // — Social Media › Travel & Tourism —
-    { cat:'social', sub:'travel', src:'', title:{ en:'Summer Offers', ar:'عروض الصيف' }, client:{ en:'Travel Agency A', ar:'شركة سفر — أ' }, year:2025, featured:true },
+    { cat:'social', sub:'travel', src:'', title:{ en:'Summer Offers', ar:'عروض الصيف' }, client:{ en:'Travel Agency A', ar:'شركة سفر — أ' }, year:2025 },
     { cat:'social', sub:'travel', src:'', title:{ en:'Istanbul Package', ar:'باقة إسطنبول' }, client:{ en:'Travel Agency A', ar:'شركة سفر — أ' }, year:2025 },
     { cat:'social', sub:'travel', src:'', title:{ en:'Umrah Trips', ar:'رحلات العمرة' }, client:{ en:'Travel Agency B', ar:'شركة سفر — ب' }, year:2024 },
     { cat:'social', sub:'travel', src:'', title:{ en:'Visa Services', ar:'خدمات الفيزا' }, client:{ en:'Travel Agency B', ar:'شركة سفر — ب' }, year:2024 },
@@ -489,7 +528,7 @@ html[lang="ar"] .tab{letter-spacing:0;font-size:.95rem}
 .card.xl{grid-column:span 2;grid-row:span 2}
 .card.wide{grid-column:span 2}
 .card.tall{grid-row:span 2}
-.card img{width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.02);transition:opacity .7s var(--ease),transform 1.1s var(--ease)}
+.card img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;opacity:0;transform:scale(1.02);transition:opacity .7s var(--ease),transform 1.1s var(--ease)}
 .card img.loaded{opacity:1;transform:scale(1)}
 .card:hover img.loaded{transform:scale(1.06)}
 .card-num{position:absolute;top:14px;inset-inline-start:14px;z-index:2;font-family:var(--f-head-en);font-size:.9rem;letter-spacing:.04em;padding:.3em .8em;border-radius:999px;border:1px solid rgba(255,255,255,.7);background:rgba(10,10,10,.7);color:#fff}
@@ -783,7 +822,7 @@ root.classList.add('js');
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let currentLang = C.defaultLang;           // language choice kept in memory only
-const state = { tab: 'social', sub: 'schools', lbList: [], lbIndex: 0, lastFocus: null };
+const state = { tab: 'social', sub: 'sports', lbList: [], lbIndex: 0, lastFocus: null };
 
 const t = path => path.split('.').reduce((o, k) => (o == null ? o : o[k]), T[currentLang]) ?? path;
 const L = v => (v && typeof v === 'object') ? (v[currentLang] ?? v.en ?? '') : (v ?? '');
@@ -1014,10 +1053,10 @@ function renderServices() {
 
 function cardHTML(p, i, size, num, featured) {
   return `<article class="card ${size} card-in" style="--i:${i}" data-i="${i}">
-    <img src="${esc(projSrc(p))}" alt="${esc(L(p.title))} — ${esc(L(p.client))}" loading="lazy" decoding="async" width="800" height="800">
+    <img src="${esc(projSrc(p))}" alt="${esc(L(p.title))} — ${esc(L(p.client))}" loading="lazy" decoding="async" width="640" height="800">
     <span class="card-num">#${pad2(num)}</span>
     ${featured ? `<span class="card-badge">★ ${esc(t('projects.subs.' + p.sub) || t('projects.featuredTag'))}</span>` : ''}
-    <div class="card-info"><div><span class="type">${esc(projType(p))} · ${esc(p.year)}</span><h3>${esc(L(p.client))}</h3></div>
+    <div class="card-info"><div><span class="type">${esc([L(p.client), p.year].filter(Boolean).join(' · '))}</span><h3>${esc(L(p.title))}</h3></div>
     <button class="pill sm" type="button" data-view="${i}" aria-label="${esc(t('projects.view'))}: ${esc(L(p.title))}">${esc(t('projects.view'))}</button></div>
   </article>`;
 }
@@ -1036,7 +1075,7 @@ function renderTabs() {
     `<button class="tab" role="tab" type="button" data-tab="${c}" aria-selected="${state.tab === c}" aria-controls="bento">${esc(t('projects.tabs.' + c))}</button>`).join('');
   const sub = $('#subtabs');
   sub.hidden = state.tab !== 'social';
-  sub.innerHTML = ['schools', 'sports', 'travel'].map(s =>
+  sub.innerHTML = ['sports', 'schools', 'travel'].map(s =>
     `<button class="tab" role="tab" type="button" data-sub="${s}" aria-selected="${state.sub === s}" aria-controls="bento">${esc(t('projects.subs.' + s))}</button>`).join('');
 }
 
@@ -1318,7 +1357,7 @@ function showLb() {
   img.src = p.full || projSrc(p);
   img.alt = `${L(p.title)} — ${L(p.client)}`;
   $('#lbTitle').textContent = L(p.title);
-  $('#lbMeta').textContent = `${L(p.client)} · ${projType(p)} · ${p.year} · ${state.lbIndex + 1}/${state.lbList.length}`;
+  $('#lbMeta').textContent = [L(p.client), projType(p), p.year, `${state.lbIndex + 1}/${state.lbList.length}`].filter(Boolean).join(' · ');
   const multi = state.lbList.length > 1;
   $('.lb-prev', lb).hidden = !multi; $('.lb-next', lb).hidden = !multi;
 }
