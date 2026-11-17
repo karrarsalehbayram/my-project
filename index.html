@@ -294,7 +294,7 @@ const CONFIG = {
       },
       projects: {
         label:'أعمال مختارة', title:'أعمالي',
-        featured:'مختارات', featuredTag:'مميّز',
+        featured:'مختارات', designs:'تصاميم', featuredTag:'مميّز',
         tabsLabel:'تصنيفات الأعمال', subsLabel:'تصنيفات السوشيال ميديا',
         tabs:{ social:'سوشيال ميديا', logos:'شعارات', prints:'مطبوعات', campaigns:'حملات', motion:'موشن وذكاء اصطناعي' },
         subs:{ schools:'مدارس', sports:'رياضة', travel:'سياحة وسفر' },
@@ -357,7 +357,7 @@ const CONFIG = {
       },
       projects: {
         label:'Selected work', title:'Projects',
-        featured:'Featured', featuredTag:'Featured',
+        featured:'Featured', designs:'designs', featuredTag:'Featured',
         tabsLabel:'Project categories', subsLabel:'Social media categories',
         tabs:{ social:'Social Media', logos:'Logos', prints:'Prints', campaigns:'Campaigns', motion:'Motion & AI' },
         subs:{ schools:'Schools', sports:'Sports', travel:'Travel & Tourism' },
@@ -502,6 +502,9 @@ html[lang="ar"] .avail{letter-spacing:0;font-size:.92rem}
 .hero-stage{position:relative;flex:1;min-height:clamp(460px,calc(100svh - var(--nav-h) - 150px),940px)}
 .hero-title{position:relative;z-index:2;display:flex;justify-content:center;align-items:baseline;white-space:nowrap;text-align:center;font-size:100px}
 .hero-title.stack{flex-direction:column;align-items:center}
+.hero-title:not(.stack){display:grid;grid-template-columns:1fr 1fr}
+.hero-title:not(.stack) .ln:nth-child(1){justify-self:end}
+.hero-title:not(.stack) .ln:nth-child(2){justify-self:start}
 .hero-title .ln{display:inline-block}
 .hero-title.stack .ln{line-height:.92}
 html[lang="ar"] .hero-title .ln{line-height:1.1}
@@ -511,6 +514,13 @@ html[lang="ar"] .hero-title.stack .ln + .ln{margin-top:-.28em}
 .portrait .disc{position:absolute;left:6%;right:6%;bottom:3%;aspect-ratio:1;border-radius:50%;background:linear-gradient(140deg,var(--purple),var(--pink) 60%,var(--orange));box-shadow:0 30px 60px -20px rgba(108,75,255,.55)}
 .portrait .ring{position:absolute;left:-2%;right:-2%;bottom:-1%;aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(108,75,255,.35);animation:spin 40s linear infinite}
 .portrait img,.portrait .sil{position:relative;width:100%;height:100%;object-fit:contain;object-position:bottom}
+.portrait .fig{position:absolute;inset:0}
+/* pop-out: everything above the disc centre shows, below it only what's inside the disc (disc = 88% wide, 3% from bottom → centre at 64% height) */
+.portrait .fig img{-webkit-mask:linear-gradient(#000,#000) top/100% 64% no-repeat,radial-gradient(closest-side,#000 calc(100% - 1px),transparent) center bottom 3%/88% 66% no-repeat;mask:linear-gradient(#000,#000) top/100% 64% no-repeat,radial-gradient(closest-side,#000 calc(100% - 1px),transparent) center bottom 3%/88% 66% no-repeat;filter:drop-shadow(0 18px 24px rgba(28,31,74,.25))}
+.camps{display:flex;flex-direction:column;gap:clamp(44px,6vw,80px)}
+.camp-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:clamp(16px,2vw,24px);padding-bottom:14px;border-bottom:1px solid var(--card-line)}
+.camp-head h3{font-family:var(--f-head);font-weight:400;font-size:clamp(1.4rem,2.6vw,2.2rem);line-height:1.2}
+.camp-head span{font-size:.85rem;color:var(--muted);white-space:nowrap}
 .portrait .ph{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.55em 1em;border-radius:999px;border:1px dashed rgba(255,255,255,.85);background:rgba(10,10,10,.6)}
 .hero-foot{position:absolute;z-index:5;inset-inline:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;pointer-events:none}
 .hero-foot > *{pointer-events:auto}
@@ -715,7 +725,7 @@ html[lang="ar"] .foot-social a{letter-spacing:0;font-size:.95rem}
 .blobs::before,.blobs::after{content:"";position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(30px);animation:drift 22s ease-in-out infinite alternate}
 .blobs::before{width:min(60vw,720px);aspect-ratio:1;top:-18%;inset-inline-start:-14%;background:radial-gradient(circle,rgba(108,75,255,.28),transparent 66%)}
 .blobs::after{width:min(52vw,640px);aspect-ratio:1;bottom:-20%;inset-inline-end:-12%;background:radial-gradient(circle,rgba(255,92,138,.24),rgba(255,162,76,.12) 45%,transparent 68%);animation-duration:26s;animation-direction:alternate-reverse}
-.portrait img{animation:floaty 6s ease-in-out infinite}
+.portrait .fig{animation:floaty 6s ease-in-out infinite}
 .portrait{translate:var(--px,0) var(--py,0);transition:translate .6s var(--ease)}
 .progress{position:fixed;top:0;inset-inline:0;height:3px;z-index:120;background:var(--grad);background-size:200% 100%;transform-origin:left;transform:scaleX(0);pointer-events:none}
 [dir="rtl"] .progress{transform-origin:right}
@@ -745,7 +755,7 @@ html.js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   html.js .reveal{transform:none}
-  .blobs::before,.blobs::after,.portrait img,.shape .float,.portrait .ring,.t-emoji{animation:none!important}
+  .blobs::before,.blobs::after,.portrait .fig,.shape .float,.portrait .ring,.t-emoji{animation:none!important}
   .card{transform:none!important}
   .mq-track{animation-duration:140s!important}
   .t-track{animation-duration:180s!important}
@@ -1138,7 +1148,7 @@ function renderShapes() {
 function renderPortrait() {
   const el = $('#portrait');
   if (C.portrait.src) {
-    el.innerHTML = `<div class="ring"></div><div class="disc"></div><img src="${esc(C.portrait.src)}" alt="${esc(t('hero.portraitAlt'))}" decoding="async" fetchpriority="high">`;
+    el.innerHTML = `<div class="ring"></div><div class="fig"><div class="disc"></div><img src="${esc(C.portrait.src)}" alt="${esc(t('hero.portraitAlt'))}" decoding="async" fetchpriority="high"></div>`;
   } else {
     // PLACEHOLDER portrait silhouette
     el.innerHTML = `<div class="ring"></div><div class="disc"></div>
@@ -1213,6 +1223,19 @@ const BENTO = ['xl', '', 'tall', '', 'wide', '', '', 'tall'];
 function renderGrid() {
   const list = C.projects.filter(p => p.cat === state.tab && (state.tab !== 'social' || p.sub === state.sub));
   const box = $('#bento');
+  if (state.tab === 'campaigns' && list.length) {
+    // one block per campaign (grouped by client) so campaigns never mix
+    const groups = [];
+    list.forEach(p => { const k = p.client ? p.client.en : ''; let g = groups.find(x => x.k === k); if (!g) groups.push(g = { k, items: [] }); g.items.push(p); });
+    box.className = 'camps'; box._list = null;
+    box.innerHTML = groups.map((g, gi) => `<section class="camp">
+      <header class="camp-head"><h3>${esc(L(g.items[0].client) || t('projects.tabs.campaigns'))}</h3><span>${g.items.length} ${esc(t('projects.designs'))}</span></header>
+      <div class="bento">${g.items.map((p, i) => cardHTML(p, i, p.size ?? BENTO[i % BENTO.length], i + 1, false)).join('')}</div></section>`).join('');
+    $$('.camp .bento', box).forEach((b, gi) => { b._list = groups[gi].items; });
+    markLoaded(box);
+    return;
+  }
+  box.className = 'bento';
   box._list = list;
   box.innerHTML = list.length
     ? list.map((p, i) => cardHTML(p, i, p.size ?? BENTO[i % BENTO.length], i + 1, false)).join('')
@@ -1304,10 +1327,12 @@ function fitHero() {
   h.classList.toggle('stack', narrow);
   lines.forEach(l => { l.style.fontSize = '100px'; });
   if (!narrow) {
-    const total = lines[0].getBoundingClientRect().width + lines[1].getBoundingClientRect().width + 22;
-    const fs = Math.min(innerHeight * 0.34, 100 * cw / total * 0.98);
+    // the two words sit either side of a centred gap as wide as the portrait's head, so the head never hides a letter
+    const gap = Math.max(($('#portrait') || h).offsetWidth * 0.36, 60);
+    const widest = Math.max(lines[0].getBoundingClientRect().width, lines[1].getBoundingClientRect().width);
+    const fs = Math.min(innerHeight * 0.34, 100 * (cw - gap) / (2 * widest) * 0.98);
     lines.forEach(l => { l.style.fontSize = fs + 'px'; });
-    h.style.columnGap = (fs * 0.22) + 'px';
+    h.style.columnGap = gap + 'px';
   } else {
     h.style.columnGap = '0px';
     lines.forEach(l => { l.style.fontSize = Math.min(innerHeight * 0.2, 100 * cw / l.getBoundingClientRect().width * 0.96) + 'px'; });
@@ -1562,7 +1587,7 @@ $('#subtabs').addEventListener('click', e => {
 
 ['#bento', '#featured'].forEach(sel => $(sel).addEventListener('click', e => {
   const card = e.target.closest('.card'); if (!card) return;
-  openLb(e.currentTarget._list, Number(card.dataset.i));
+  openLb(card.parentElement._list, Number(card.dataset.i));
 }));
 
 $('#waForm').addEventListener('submit', e => {
