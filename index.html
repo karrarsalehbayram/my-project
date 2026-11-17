@@ -144,12 +144,13 @@ const CONFIG = {
     { cat:'social', sub:'schools', src:'', title:{ en:'Teachers Day', ar:'يوم المعلم' }, client:{ en:'School Client B', ar:'مدرسة — عميل ب' }, year:2024 },
     { cat:'social', sub:'schools', src:'', title:{ en:'Top Students', ar:'الطلبة المتفوقون' }, client:{ en:'School Client C', ar:'مدرسة — عميل ج' }, year:2023 },
     // — Social Media › Travel & Tourism —
-    { cat:'social', sub:'travel', src:'', title:{ en:'Summer Offers', ar:'عروض الصيف' }, client:{ en:'Travel Agency A', ar:'شركة سفر — أ' }, year:2025 },
-    { cat:'social', sub:'travel', src:'', title:{ en:'Istanbul Package', ar:'باقة إسطنبول' }, client:{ en:'Travel Agency A', ar:'شركة سفر — أ' }, year:2025 },
-    { cat:'social', sub:'travel', src:'', title:{ en:'Umrah Trips', ar:'رحلات العمرة' }, client:{ en:'Travel Agency B', ar:'شركة سفر — ب' }, year:2024 },
-    { cat:'social', sub:'travel', src:'', title:{ en:'Visa Services', ar:'خدمات الفيزا' }, client:{ en:'Travel Agency B', ar:'شركة سفر — ب' }, year:2024 },
-    { cat:'social', sub:'travel', src:'', title:{ en:'Honeymoon Deals', ar:'عروض شهر العسل' }, client:{ en:'Tourism Co.', ar:'شركة سياحة' }, year:2024 },
-    { cat:'social', sub:'travel', src:'', title:{ en:'Flight Tickets', ar:'تذاكر الطيران' }, client:{ en:'Tourism Co.', ar:'شركة سياحة' }, year:2023 },
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-rabi1-flight.webp", "full": "img/works/full/travel-rabi1-flight.webp", "title": {"ar": "رحلات ربيع الأول — طيران VIP", "en": "Rabi al-Awwal Trips — VIP Flights"}, "client": {"ar": "ديار الجواد لتنظيم الرحلات", "en": "Deyar Aljawad Travel"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-arbaeen-1.webp", "full": "img/works/full/travel-arbaeen-1.webp", "title": {"ar": "زيارة الأربعين — قوافل نحو الحسين", "en": "Arbaeen Pilgrimage — Caravans to Hussein"}, "client": {"ar": "وكالة قوافل لتنظيم الرحلات", "en": "Qawafil Travel Agency"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-autumn.webp", "full": "img/works/full/travel-autumn.webp", "title": {"ar": "رحلات نوفمبر وإجازة الخريف", "en": "November & Autumn Break Trips"}, "client": {"ar": "ديار الجواد لتنظيم الرحلات", "en": "Deyar Aljawad Travel"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-rabi1-vip.webp", "full": "img/works/full/travel-rabi1-vip.webp", "title": {"ar": "رحلات ربيع الأول — بر VIP", "en": "Rabi al-Awwal Trips — VIP by Road"}, "client": {"ar": "ديار الجواد لتنظيم الرحلات", "en": "Deyar Aljawad Travel"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-arbaeen-2.webp", "full": "img/works/full/travel-arbaeen-2.webp", "title": {"ar": "زيارة الأربعين واستشهاد النبي", "en": "Arbaeen & the Prophet’s Martyrdom Trips"}, "client": {"ar": "وكالة قوافل لتنظيم الرحلات", "en": "Qawafil Travel Agency"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-rabi2.webp", "full": "img/works/full/travel-rabi2.webp", "title": {"ar": "رحلات ربيع الثاني — عرض فندقين", "en": "Rabi al-Thani Trips — Two-Hotel Offer"}, "client": {"ar": "ديار الجواد لتنظيم الرحلات", "en": "Deyar Aljawad Travel"}, "year": 2026},
+    {"cat": "social", "sub": "travel", "src": "img/works/travel-rabi1-eco.webp", "full": "img/works/full/travel-rabi1-eco.webp", "title": {"ar": "رحلات ربيع الأول — بر اقتصادي", "en": "Rabi al-Awwal Trips — Economy by Road"}, "client": {"ar": "ديار الجواد لتنظيم الرحلات", "en": "Deyar Aljawad Travel"}, "year": 2026},
     // — Logos —
     { cat:'logos', src:'', title:{ en:'Café Identity', ar:'هوية مقهى' }, client:{ en:'Logo Client A', ar:'عميل شعار — أ' }, year:2025 },
     { cat:'logos', src:'', title:{ en:'Academy Mark', ar:'شعار أكاديمية' }, client:{ en:'Logo Client B', ar:'عميل شعار — ب' }, year:2025 },
@@ -1053,7 +1054,7 @@ function renderServices() {
 
 function cardHTML(p, i, size, num, featured) {
   return `<article class="card ${size} card-in" style="--i:${i}" data-i="${i}">
-    <img src="${esc(projSrc(p))}" alt="${esc(L(p.title))} — ${esc(L(p.client))}" loading="lazy" decoding="async" width="640" height="800">
+    <img${p.sub === 'travel' ? ' style="object-position:50% 0"' : ''} src="${esc(projSrc(p))}" alt="${esc(L(p.title))} — ${esc(L(p.client))}" loading="lazy" decoding="async" width="640" height="800">
     <span class="card-num">#${pad2(num)}</span>
     ${featured ? `<span class="card-badge">★ ${esc(t('projects.subs.' + p.sub) || t('projects.featuredTag'))}</span>` : ''}
     <div class="card-info"><div><span class="type">${esc([L(p.client), p.year].filter(Boolean).join(' · '))}</span><h3>${esc(L(p.title))}</h3></div>
